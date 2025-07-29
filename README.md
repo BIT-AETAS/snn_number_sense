@@ -41,7 +41,7 @@ This repository contains the code for the paper "Reveal the Emergence and Develo
     ```bash
      python learning/init_snn.py --T 4
      ```
-
+<!-- 
 ## Citation
 
 If you use this code, please cite our paper:
@@ -53,8 +53,8 @@ If you use this code, please cite our paper:
     journal={Journal Name},
     year={202X}
 }
-```
+``` -->
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the Apache2.0 License.

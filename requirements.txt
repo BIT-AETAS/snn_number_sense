@@ -1,0 +1,15 @@
+matplotlib==3.9.2
+numpy==1.26.3
+pandas==2.2.3
+pillow==10.2.0
+scikit-learn==1.6.0
+scipy==1.13.1
+seaborn==0.13.2
+spikingjelly==0.0.0.0.14
+statsmodels==0.14.3
+tensorboard==2.18.0
+torch==2.1.1+cu118
+torchaudio==2.1.1+cu118
+torchvision==0.16.1+cu118
+tqdm==4.66.5
+triton==2.1.0

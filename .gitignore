@@ -1,3 +1,13 @@
+# keep these files empty to ensure the directory is tracked by git
+# This file is used to keep the directory structure in git, as git does not track empty directories.
+# The .gitkeep file is a convention used to achieve this.
+datasets/*
+!datasets/.gitkeep
+analyze_data/*
+!analyze_data/.gitkeep
+model_set/*
+!model_set/.gitkeep
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

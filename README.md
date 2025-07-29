@@ -40,6 +40,8 @@ This repository contains the code for the paper "Reveal the Emergence and Develo
 4. Train and analyze the network using the scripts in the `learning` and `analyze` directories. For example:
     ```bash
      python learning/init_snn.py --T 4
+     python NSN_analyze.py
+     python analyze/weight_analyze.py
      ```
 <!-- 
 ## Citation

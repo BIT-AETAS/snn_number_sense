@@ -1,4 +1,4 @@
-This repository contains the code for the paper "Reveal the Emergence and Development of Number Sense through Brain-Inspired Spiking Neural Network".
+This repository contains the code for the paper "Reveal Possible Mechanism of How Brain Learning Shapes Number Sense with Brain-Inspired Spiking Neural Network".
 
 ## Directory Structure
 

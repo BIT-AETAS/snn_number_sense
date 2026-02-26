@@ -326,6 +326,23 @@ class FastAnovaRunner(AnovaRunner):
         
         return pA, pB, pAB
 
+    def bh_fdr(self, p_values, q=0.05, n=None):
+        """
+        Benjamini-Hochberg FDR correction
+        """
+        p_values = np.array(p_values)
+        if n is None:
+            n = len(p_values)
+        sorted_indices = np.argsort(p_values)
+        sorted_p_values = p_values[sorted_indices]
+        thresholds = (np.arange(1, len(p_values) + 1) / n) * q
+        below_threshold = sorted_p_values <= thresholds
+        if not np.any(below_threshold):
+            return np.array([], dtype=int)
+        max_index = np.where(below_threshold)[0].max()
+        significant_indices = sorted_indices[:max_index + 1]
+        return significant_indices
+
     def run(self):
         start_time = time.time()
         print("Start two-ways anova: ", time.strftime(
@@ -333,6 +350,8 @@ class FastAnovaRunner(AnovaRunner):
         pN, pC, pNC = self.anova_two_way(
             self.numerositys, self.controls, self.responses)
         self.PN_index = np.where((pN < self.p1) & (pNC > self.p2) & (pC > self.p3))[0]
+        mask_index = self.bh_fdr(pN[self.PN_index], q=0.05, n=len(pN))
+        self.PN_index = self.PN_index[mask_index]
         end_time = time.time()
         print("End two-ways anova: ", time.strftime(
             "%Y-%m-%d %H:%M:%S", time.localtime(end_time)))
